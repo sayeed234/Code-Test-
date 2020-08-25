@@ -11,8 +11,19 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
+    <link href="{{ asset('css/dataTables.bootstrap.min.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/dataTables.bootstrap4.min.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/dataTables.foundation.min.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/jquery.dataTables.min.css') }}" rel="stylesheet"/>
+
+
+
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
+
 
 
     <script type="text/javascript">
@@ -197,6 +208,19 @@ if($user_meta['temp_user'] === true){
 ?>
 
 
+<script>
+  $(function () {
+    $("#example1").DataTable();
+    $('#example').DataTable({
+      "paging": true,
+      "lengthChange": true,
+      "searching": true,
+      "ordering": false,
+      "info": true,
+      "autoWidth": true,
+    });
+  });
+</script>
 <script type="text/javascript">
     Autopilot.run("associate", {
         Email: "<?php echo \Auth::user()->email; ?>",
@@ -331,6 +355,18 @@ if($user_meta['temp_user'] === true){
 <script src="//fast.appcues.com/widget-bundle.js" type="text/javascript"></script>
 
 <script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ asset('js/dataTables.bootstrap.js') }}"></script>
+<script src="{{ asset('js/dataTables.bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/dataTables.bootstrap4.js') }}"></script>
+<script src="{{ asset('js/dataTables.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+
+<script>
+$(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+
 <script>
 
     var hash = window.location.hash;

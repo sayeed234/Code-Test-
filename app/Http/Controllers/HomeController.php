@@ -471,7 +471,9 @@ class HomeController extends Controller
          $data=DB::table('buffer_postings')  
               ->join('social_accounts','social_accounts.id','=','buffer_postings.account_id')
               ->join('social_post_groups','social_post_groups.id','=','buffer_postings.group_id')
-              ->paginate(15);
+              ->limit(100)
+              ->get();
+
          
           $group=DB::table('social_post_groups') 
                 ->select('social_post_groups.name') 
